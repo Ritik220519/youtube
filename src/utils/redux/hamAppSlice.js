@@ -8,8 +8,11 @@ const hamAppSlice = createSlice({
   reducers: {
     toggleMenu : (state)=>{
         state.isMenuOpen = !state.isMenuOpen
-    }
+    },
+    closeMenu : (state)=>{
+      state.isMenuOpen = false;
+  }
   }
 });
-export const {toggleMenu} = hamAppSlice.actions;
+export const {toggleMenu , closeMenu} = hamAppSlice.actions;
 export default hamAppSlice.reducer;
