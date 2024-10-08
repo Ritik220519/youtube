@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { closeMenu } from "../utils/redux/hamAppSlice";
 import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -15,7 +16,8 @@ const WatchPage = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="p-7">
+      <div className="p-7 flex">
+        <div>
         <iframe
           width="1100"
           height="500"
@@ -26,6 +28,10 @@ const WatchPage = () => {
           referrerpolicy="strict-origin-when-cross-origin"
           allowFullScreen
         ></iframe>
+        </div>
+        <div>
+          <LiveChat/>
+        </div>
       </div>
       <CommentsContainer />
     </div>
